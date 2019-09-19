@@ -1,4 +1,3 @@
-import sql from 'mssql';
 import { Readable } from 'stream';
 
 import { DbTypes, IDbConnection } from './types';
@@ -11,23 +10,6 @@ export async function getDb(databaseConfig: IDbConnection, dbType: DbTypes) {
         if (dbConnection) {
             return dbConnection.db;
         }
-    }
-    if (dbType === 'mssql') {
-        const pool = new sql.ConnectionPool({ ...databaseConfig } as sql.config);
-        const db = await pool.connect();
-        cachedDbConnections.set(dbKey, {
-            db,
-            close: pool.close.bind(pool),
-        });
-        return db;
-    } else {
-        const pgp = require('pg-promise')({ schema: databaseConfig.schema || 'public', });
-        const db = pgp(databaseConfig);
-        cachedDbConnections.set(dbKey, {
-            db,
-            close: pgp.end,
-        });
-        return db;
     }
 };
 
