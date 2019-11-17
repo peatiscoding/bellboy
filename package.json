@@ -1,5 +1,5 @@
 {
-  "name": "bellboy",
+  "name": "slim-bellboy",
   "version": "2.8.0",
   "description": "Highly performant JavaScript data stream ETL engine.",
   "main": "lib/index",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Claviz/bellboy.git"
+    "url": "git+https://github.com/peatiscoding/bellboy"
   },
   "keywords": [
     "etl",
@@ -19,10 +19,7 @@
   ],
   "author": "",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Claviz/bellboy/issues"
-  },
-  "homepage": "https://github.com/Claviz/bellboy#readme",
+  "homepage": "https://github.com/peatiscoding/bellboy#readme",
   "devDependencies": {
     "@types/jest": "^24.0.12",
     "@types/node": "^12.0.0",
